@@ -27,8 +27,9 @@ const Shop = () => {
     time = time + product.time;
   }
 
-  const addABreak = () => {
-    document.getElementById("first-btn");
+  const [breakTime, setBreakTime] = useState(0);
+  const addABreak = (time) => {
+    setBreakTime(time);
   };
 
   return (
@@ -111,19 +112,19 @@ const Shop = () => {
           <h2>Add A Break</h2>
 
           <div className="time-btn">
-            <button id="first-btn" onClick={() => addABreak()}>
+            <button id="first-btn" onClick={() => addABreak(10)}>
               10s
             </button>
-            <button>
+            <button onClick={() => addABreak(20)}>
               <p>20s</p>
             </button>
-            <button>
+            <button onClick={() => addABreak(30)}>
               <p>30s</p>
             </button>
-            <button>
+            <button onClick={() => addABreak(40)}>
               <p>40s</p>
             </button>
-            <button>
+            <button onClick={() => addABreak(50)}>
               <p>50s</p>
             </button>
           </div>
@@ -134,7 +135,7 @@ const Shop = () => {
             <p>Selected items : {cart.length}</p>
             <h4>Exercise Time: {time}s</h4>
 
-            <h4>Break Time:</h4>
+            <h4>Break Time:{breakTime}s</h4>
           </div>
 
           <div className="activity-btn">
