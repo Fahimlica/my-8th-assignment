@@ -27,6 +27,10 @@ const Shop = () => {
     time = time + product.time;
   }
 
+  const addABreak = () => {
+    document.getElementById("first-btn");
+  };
+
   return (
     <div className="shop-container">
       <div className="products-container">
@@ -107,11 +111,21 @@ const Shop = () => {
           <h2>Add A Break</h2>
 
           <div className="time-btn">
-            <button>10s</button>
-            <button>20s</button>
-            <button>30s</button>
-            <button>40s</button>
-            <button>50s</button>
+            <button id="first-btn" onClick={() => addABreak()}>
+              10s
+            </button>
+            <button>
+              <p>20s</p>
+            </button>
+            <button>
+              <p>30s</p>
+            </button>
+            <button>
+              <p>40s</p>
+            </button>
+            <button>
+              <p>50s</p>
+            </button>
           </div>
 
           <h3>Exercise Details </h3>
