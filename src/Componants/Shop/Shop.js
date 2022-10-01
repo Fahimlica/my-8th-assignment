@@ -16,11 +16,19 @@ const Shop = () => {
   //     toast("Wow so easy!");
   //   };
 
+  const handleAddToCart = (product) => {
+    console.log(product);
+  };
+
   return (
     <div className="shop-container">
       <div className="products-container">
         {products.map((product) => (
-          <Product key={product.id} product={product}></Product>
+          <Product
+            key={product.id}
+            product={product}
+            handleAddToCart={handleAddToCart}
+          ></Product>
         ))}
 
         <div>
@@ -30,7 +38,7 @@ const Shop = () => {
             reason about your application and aims to be both efficient and
             flexible. It designs simple views for each state in your
             application, and React will efficiently update and render just the
-            right component when your data changesggggg.
+            right component when your data changes.
           </p>
         </div>
         <div>
