@@ -10,7 +10,7 @@ const Product = (props) => {
         <img src={picture} alt=""></img>
         <h3>Name: {name}</h3>
         <h3>Id: {id}</h3>
-        <h3>Time: {time}</h3>
+        <h3>Time in seconds: {time}</h3>
         <h3>Index: {index}</h3>
         <h3>Age: {age}</h3>
         <h3>About: {about.slice(0, 40)}...</h3>

@@ -6,6 +6,7 @@ import "./Shop.css";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
@@ -17,8 +18,14 @@ const Shop = () => {
   //   };
 
   const handleAddToCart = (product) => {
-    console.log(product);
+    const newCart = [...cart, product];
+    setCart(newCart);
   };
+
+  let time = 0;
+  for (const product of cart) {
+    time = time + product.time;
+  }
 
   return (
     <div className="shop-container">
@@ -79,7 +86,7 @@ const Shop = () => {
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              type.
             </p>
           </div>
 
@@ -110,7 +117,8 @@ const Shop = () => {
           <h3>Exercise Details </h3>
 
           <div>
-            <h4>Exercise Time:</h4>
+            <p>Selected items : {cart.length}</p>
+            <h4>Exercise Time: {time}s</h4>
 
             <h4>Break Time:</h4>
           </div>
